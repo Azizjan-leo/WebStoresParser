@@ -65,6 +65,8 @@
     <Compile Include="Core\ksanf.spb.ru\KsanfParser.cs" />
     <Compile Include="Core\ksanf.spb.ru\KsanfSettings.cs" />
     <Compile Include="Core\ParserWorker.cs" />
+    <Compile Include="Core\promelec.ru\PromelecParser.cs" />
+    <Compile Include="Core\promelec.ru\PromelecSettings.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using WebStoresParser.WinForms.Core;
 using WebStoresParser.WinForms.Core.Habra;
 using WebStoresParser.WinForms.Core.Ksanf;
+using WebStoresParser.WinForms.Core.Promelec;
 
 namespace WebStoresParser.WinForms
 {
@@ -13,7 +14,7 @@ namespace WebStoresParser.WinForms
         {
             InitializeComponent();
             _parser = new ParserWorker<string[]>(
-                new KsanfParser()
+                new PromelecParser()
                 );
             _parser.OnCompleted += Parser_OnCompleted;
             _parser.OnNewData += Parser_OnNewData;
@@ -31,7 +32,7 @@ namespace WebStoresParser.WinForms
 
         private void StartBtn_Click(object sender, EventArgs e)
         {
-            _parser.Settings = new KsanfSettings();
+            _parser.Settings = new PromelecSettings();
             _parser.Start(SearchProductTxt.Text);
         }
 
