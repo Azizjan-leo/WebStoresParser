@@ -55,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\chipdip.ru\ChipdipParser.cs" />
+    <Compile Include="Core\chipdip.ru\ChipdipSettings.cs" />
     <Compile Include="Core\eleksnab.ru\EleksnabParser.cs" />
     <Compile Include="Core\eleksnab.ru\EleksnabSettings.cs" />
     <Compile Include="Core\Habra\HabraParser.cs" />
@@ -65,6 +67,8 @@
     <Compile Include="Core\ksanf.spb.ru\KsanfParser.cs" />
     <Compile Include="Core\ksanf.spb.ru\KsanfSettings.cs" />
     <Compile Include="Core\ParserWorker.cs" />
+    <Compile Include="Core\platan.ru\PlatanParser.cs" />
+    <Compile Include="Core\platan.ru\PlatanSettings.cs" />
     <Compile Include="Core\promelec.ru\PromelecParser.cs" />
     <Compile Include="Core\promelec.ru\PromelecSettings.cs" />
     <Compile Include="MainForm.cs">

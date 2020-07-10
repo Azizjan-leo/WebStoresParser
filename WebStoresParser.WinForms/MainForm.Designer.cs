@@ -82,6 +82,7 @@
             // 
             // SearchProductTxt
             // 
+            this.SearchProductTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchProductTxt.Location = new System.Drawing.Point(249, 30);
             this.SearchProductTxt.Name = "SearchProductTxt";
             this.SearchProductTxt.Size = new System.Drawing.Size(116, 20);

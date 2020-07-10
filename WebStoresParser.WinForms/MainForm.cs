@@ -4,6 +4,8 @@ using WebStoresParser.WinForms.Core;
 using WebStoresParser.WinForms.Core.Habra;
 using WebStoresParser.WinForms.Core.Ksanf;
 using WebStoresParser.WinForms.Core.Promelec;
+using WebStoresParser.WinForms.Core.Chipdip;
+using WebStoresParser.WinForms.Core.Platan;
 
 namespace WebStoresParser.WinForms
 {
@@ -14,7 +16,7 @@ namespace WebStoresParser.WinForms
         {
             InitializeComponent();
             _parser = new ParserWorker<string[]>(
-                new PromelecParser()
+                new PlatanParser()
                 );
             _parser.OnCompleted += Parser_OnCompleted;
             _parser.OnNewData += Parser_OnNewData;
@@ -32,7 +34,7 @@ namespace WebStoresParser.WinForms
 
         private void StartBtn_Click(object sender, EventArgs e)
         {
-            _parser.Settings = new PromelecSettings();
+            _parser.Settings = new PlatanSettings();
             _parser.Start(SearchProductTxt.Text);
         }
 
