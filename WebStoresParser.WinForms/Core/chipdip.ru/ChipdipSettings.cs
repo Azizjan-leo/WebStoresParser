@@ -1,7 +1,7 @@
 ﻿
 namespace WebStoresParser.WinForms.Core.Chipdip
 {
-    class ChipdipSettings : IParserSettings
+    class ChipdipSettings : ParserSettings
     {
         public ChipdipSettings()
         {

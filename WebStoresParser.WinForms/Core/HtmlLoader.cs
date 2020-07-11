@@ -8,11 +8,12 @@ namespace WebStoresParser.WinForms.Core
     {
         readonly HttpClient client;
         readonly string url;
-
-        public HtmlLoader(IParserSettings settings)
+        readonly bool isUTF8;
+        public HtmlLoader(ParserSettings settings)
         {
             client = new HttpClient();
             url = $"{settings.BaseURL}/{settings.Prefix}";
+            isUTF8 = settings.IsUTF8;
         }
 
         public async Task<string> GetSourceByProductName(string productName)
@@ -24,7 +25,10 @@ namespace WebStoresParser.WinForms.Core
 
             if (response != null && response.StatusCode == HttpStatusCode.OK)
             {
-                source = await response.Content.ReadAsStringAsync();
+                if (isUTF8)
+                    source = System.Text.Encoding.UTF8.GetString(await response.Content.ReadAsByteArrayAsync());
+                else
+                    source = await response.Content.ReadAsStringAsync();
             }
 
             return source;

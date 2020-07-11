@@ -57,6 +57,8 @@
   <ItemGroup>
     <Compile Include="Core\chipdip.ru\ChipdipParser.cs" />
     <Compile Include="Core\chipdip.ru\ChipdipSettings.cs" />
+    <Compile Include="Core\electronshik.ru\ElectronshikParser.cs" />
+    <Compile Include="Core\electronshik.ru\ElectronshikSettings.cs" />
     <Compile Include="Core\eleksnab.ru\EleksnabParser.cs" />
     <Compile Include="Core\eleksnab.ru\EleksnabSettings.cs" />
     <Compile Include="Core\Habra\HabraParser.cs" />
@@ -105,5 +107,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

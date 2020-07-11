@@ -1,9 +1,10 @@
 ﻿
 namespace WebStoresParser.WinForms.Core
 {
-    interface IParserSettings
+    abstract class ParserSettings
     {
-        string BaseURL { get; set; }
-        string Prefix { get; set; }
+        public string BaseURL { get; set; }
+        public string Prefix { get; set; }
+        public bool IsUTF8 { get; set; } = false;
     }
 }

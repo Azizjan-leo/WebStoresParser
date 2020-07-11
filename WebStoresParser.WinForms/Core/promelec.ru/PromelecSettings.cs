@@ -1,7 +1,7 @@
 ﻿
 namespace WebStoresParser.WinForms.Core.Promelec
 {
-    class PromelecSettings : IParserSettings
+    class PromelecSettings : ParserSettings
     {
         public PromelecSettings()
         {

@@ -1,16 +1,12 @@
 ﻿using AngleSharp.Html.Parser;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WebStoresParser.WinForms.Core
 {
     class ParserWorker<T> where T : class
     {
         IParser<T> _parser;
-        IParserSettings _settings;
+        ParserSettings _settings;
         bool isActive;
         HtmlLoader loader;
 
@@ -28,7 +24,7 @@ namespace WebStoresParser.WinForms.Core
             }
         }
 
-        public IParserSettings Settings
+        public ParserSettings Settings
         {
             get
             {
@@ -63,7 +59,7 @@ namespace WebStoresParser.WinForms.Core
             _parser = parser;
         }
 
-        public ParserWorker(IParser<T> parser, IParserSettings settings)
+        public ParserWorker(IParser<T> parser, ParserSettings settings)
         {
             _parser = parser;
             _settings = settings;

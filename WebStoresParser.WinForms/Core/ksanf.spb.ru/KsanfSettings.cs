@@ -1,7 +1,7 @@
 ﻿
 namespace WebStoresParser.WinForms.Core.Ksanf
 {
-    class KsanfSettings : IParserSettings
+    class KsanfSettings : ParserSettings
     {
         public KsanfSettings()
         {

@@ -6,6 +6,7 @@ using WebStoresParser.WinForms.Core.Ksanf;
 using WebStoresParser.WinForms.Core.Promelec;
 using WebStoresParser.WinForms.Core.Chipdip;
 using WebStoresParser.WinForms.Core.Platan;
+using WebStoresParser.WinForms.Core.Electronshik;
 
 namespace WebStoresParser.WinForms
 {
@@ -16,7 +17,7 @@ namespace WebStoresParser.WinForms
         {
             InitializeComponent();
             _parser = new ParserWorker<string[]>(
-                new PlatanParser()
+                new ElectronshikParser()
                 );
             _parser.OnCompleted += Parser_OnCompleted;
             _parser.OnNewData += Parser_OnNewData;
@@ -34,7 +35,7 @@ namespace WebStoresParser.WinForms
 
         private void StartBtn_Click(object sender, EventArgs e)
         {
-            _parser.Settings = new PlatanSettings();
+            _parser.Settings = new ElectronshikSettings();
             _parser.Start(SearchProductTxt.Text);
         }
 

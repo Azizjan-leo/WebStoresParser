@@ -1,7 +1,7 @@
 ﻿
 namespace WebStoresParser.WinForms.Core.Habra
 {
-    class EleksnabSettings : IParserSettings
+    class EleksnabSettings : ParserSettings
     {
         public EleksnabSettings(int start, int end)
         {

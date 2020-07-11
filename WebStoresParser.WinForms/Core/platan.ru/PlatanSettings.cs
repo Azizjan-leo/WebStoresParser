@@ -1,7 +1,7 @@
 ﻿
 namespace WebStoresParser.WinForms.Core.Platan
 {
-    class PlatanSettings : IParserSettings
+    class PlatanSettings : ParserSettings
     {
         public PlatanSettings()
         {

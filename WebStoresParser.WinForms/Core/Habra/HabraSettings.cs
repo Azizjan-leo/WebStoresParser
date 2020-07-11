@@ -1,7 +1,7 @@
 ﻿
 namespace WebStoresParser.WinForms.Core.Habra
 {
-    class HabraSettings : IParserSettings
+    class HabraSettings : ParserSettings
     {
         public HabraSettings(int start, int end)
         {
