@@ -1,5 +1,6 @@
 ﻿using AngleSharp.Html.Parser;
 using System;
+using System.Threading.Tasks;
 
 namespace WebStoresParser.WinForms.Core
 {
@@ -7,22 +8,12 @@ namespace WebStoresParser.WinForms.Core
     {
         IParser<T> _parser;
         ParserSettings _settings;
-        bool isActive;
         HtmlLoader loader;
+        bool _isActive;
 
         #region Properties
 
-        public IParser<T> Parser 
-        {
-            get
-            {
-                return _parser;
-            }
-            set
-            {
-                _parser = value;
-            }
-        }
+        public IParser<T> Parser { get => _parser; set => _parser = value; }
 
         public ParserSettings Settings
         {
@@ -37,12 +28,16 @@ namespace WebStoresParser.WinForms.Core
             }
         }
 
-        public bool IsActive 
+        public bool IsActive
         {
             get
             {
-                return isActive;
-            } 
+                return _isActive;
+            }
+            set
+            {
+                _isActive = value;
+            }
         }
         #endregion
 
@@ -56,47 +51,46 @@ namespace WebStoresParser.WinForms.Core
 
         public ParserWorker(IParser<T> parser)
         {
-            _parser = parser;
+            Parser = parser;
         }
 
         public ParserWorker(IParser<T> parser, ParserSettings settings)
         {
-            _parser = parser;
+            Parser = parser;
             _settings = settings;
         }
 
-        public void Start(string productName)
+        public async Task Start(string productName)
         {
-            isActive = true;
-            Worker(productName);
+            IsActive = true;
+            await Worker(productName);
         }
 
         public void Abort()
         {
-            isActive = false;
+            IsActive = false;
         }
 
-        private async void Worker(string productName)
+        private async Task Worker(string productName)
         {
-            
-            if (!isActive)
+            if (!IsActive)
             {
                 OnCompleted?.Invoke(this);
                 return;
             }
-                  
+
 
             var source = await loader.GetSourceByProductName(productName);
             var domParser = new HtmlParser();
 
             var document = await domParser.ParseDocumentAsync(source);
 
-            var result = _parser.Parse(document);
+            var result = Parser.Parse(document);
 
             OnNewData?.Invoke(this, result);
            
             OnCompleted?.Invoke(this);
-            isActive = false;
+            IsActive = false;
         }
     }
 }

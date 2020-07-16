@@ -73,6 +73,8 @@
     <Compile Include="Core\platan.ru\PlatanSettings.cs" />
     <Compile Include="Core\promelec.ru\PromelecParser.cs" />
     <Compile Include="Core\promelec.ru\PromelecSettings.cs" />
+    <Compile Include="Core\zip-2002.ru\ZipParser.cs" />
+    <Compile Include="Core\zip-2002.ru\ZipSettings.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

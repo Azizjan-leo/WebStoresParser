@@ -59,14 +59,13 @@
             // StartBtn
             // 
             this.StartBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.StartBtn.Enabled = false;
             this.StartBtn.Location = new System.Drawing.Point(245, 115);
             this.StartBtn.Name = "StartBtn";
             this.StartBtn.Size = new System.Drawing.Size(120, 23);
             this.StartBtn.TabIndex = 5;
             this.StartBtn.Text = "Start";
             this.StartBtn.UseVisualStyleBackColor = true;
-            this.StartBtn.Click += new System.EventHandler(this.StartBtn_Click);
+            //this.StartBtn.Click += new System.EventHandler(this.StartBtn_Click);
             // 
             // AbortBtn
             // 
@@ -87,6 +86,7 @@
             this.SearchProductTxt.Name = "SearchProductTxt";
             this.SearchProductTxt.Size = new System.Drawing.Size(116, 20);
             this.SearchProductTxt.TabIndex = 7;
+            this.SearchProductTxt.Text = "2в102в";
             this.SearchProductTxt.TextChanged += new System.EventHandler(this.SearchProductTxt_TextChanged);
             // 
             // MainForm
